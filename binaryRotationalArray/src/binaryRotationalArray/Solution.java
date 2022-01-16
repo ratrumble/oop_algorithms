@@ -5,6 +5,7 @@ class Solution {
         int upperBound = nums.length - 1;
         int lowerBound = 0;
         int mid = lowerBound + (upperBound - lowerBound) / 2;
+        int targetIndex = -1;
         
         if(nums.length == 0){
             return -1;
@@ -13,58 +14,38 @@ class Solution {
             return mid;
         }
         
-        return right(upperBound, lowerBound, target, nums);
+        return bst(upperBound, lowerBound, target, nums);
         
     }
     
-    public int right(int upperBound, int lowerBound, int target, int[] nums){
+    public int bst(int upperBound, int lowerBound, int target, int[] nums){
 
-        if(upperBound >= lowerBound){
-            int mid = lowerBound + (upperBound - lowerBound) / 2;
-            if(nums[mid]==target){
-                return mid;
-            }
-            
-            if(target > nums[nums.length - 1] && nums[lowerBound] < nums[0]){
-                upperBound = lowerBound;
-                lowerBound = 0;
-                return rightHelper(upperBound, lowerBound, target, nums);
+        if(upperBound < lowerBound){
+            return -1;
+        }
+        int mid = lowerBound + (upperBound - lowerBound) / 2;
+        
+        if(nums[mid] == target){
+            return mid;
+        }
+        
+        if(nums[lowerBound] <= nums[mid]){
+            if(target >= nums[lowerBound] && target <= nums[mid]){
+                upperBound = mid - 1;
             }
             else{
-                if(nums[mid] < target){
-                    lowerBound += 1;
-                    return right(upperBound, lowerBound, target, nums);
-                }
-                else{
-                    if(nums[mid] > nums[nums.length-1]){
-                        lowerBound = mid + 1;
-                        return right(upperBound, lowerBound, target, nums);
-                    }
-                    upperBound -= 1;
-                    return right(upperBound, lowerBound, target, nums);
-                }
+                lowerBound = mid + 1;
             }
         }
-        return -1;
+        else{
+            if(target >= nums[mid] && target <= nums[upperBound]){
+                lowerBound = mid + 1;
+            }
+            else{
+                upperBound = mid - 1;
+            }
+        }
+        return bst(upperBound, lowerBound, target, nums);
     }
     
-    public int rightHelper(int upperBound, int lowerBound, int target, int[] nums){
-
-        if(upperBound >= lowerBound){
-            int mid = lowerBound + (upperBound - lowerBound) / 2;
-            if(nums[mid]==target){
-                return mid;
-            }
-            
-            if(nums[mid] < target){
-                lowerBound += 1;
-                return rightHelper(upperBound, lowerBound, target, nums);
-            }
-            else{
-                upperBound -= 1;
-                return rightHelper(upperBound, lowerBound, target, nums);
-            }
-        }
-        return -1;
-    }
 }
