@@ -11,4 +11,9 @@ public class Add implements Math{
 	public int calculate() {
 		return x+y;
 	}
+	//single responsibility principle
+	//there are many ways to calculate in math
+	//separate the functions of calculation into
+	//classes so it can be used outside of just Math
+	//and does not depend on Math class.
 }

@@ -5,6 +5,6 @@ public interface Math {
 	//Give calculations to their own class
 	//any class that does not calculate
 	//will not use this interface because of Liskov
-	//principle
+	//substitution principle
 	
 }

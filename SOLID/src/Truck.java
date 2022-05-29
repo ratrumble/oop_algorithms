@@ -1,7 +1,7 @@
 
 public interface Truck extends Vehicle{
 	public void checkCarriage();
-	//interface segregation
+	//interface segregation principle
 	//some vehicles have different actions
 	//permissible and those actions will not be
 	//included in the Vehicle interface

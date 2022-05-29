@@ -17,4 +17,5 @@ public class TruckDriver implements Truck{
 		System.out.println("Look behind you");
 	}
 //same methods as TruckVehicle, different implementations of method
+//dependency inversion principle
 }
