@@ -6,4 +6,3 @@ INDEX VERSION 1.131+C:\Users\werty\algorithms\.metadata\.plugins\org.eclipse.jdt
 3807735694.index
 3751550035.index
 4067887346.index
-34429034.index
