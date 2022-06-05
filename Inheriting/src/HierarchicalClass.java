@@ -1,5 +1,5 @@
 
-public class HierarchicalClass extends Parent{
+public class HierarchicalClass extends Vehicle{
 
 	protected int hnum;
 	
