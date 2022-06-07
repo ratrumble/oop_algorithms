@@ -9,3 +9,4 @@ public class Student
        this.studentName=name;
        this.studentAddr = addr;
    }
+}
