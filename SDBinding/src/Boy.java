@@ -13,7 +13,8 @@ class Boy extends Human{
        /* Reference is of Human type and object is
         * Boy type
         */
-       Human obj = new Boy();
+	   Human obj1 = new Boy(); //does not override bc static
+       Boy obj = new Boy(); //method hiding
        /* Reference is of Human type and object is
         * of Human type.
         */
